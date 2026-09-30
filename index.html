@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오늘의 할 일</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <p class="eyebrow">직장인 업무 관리</p>
+        <h1>오늘의 할 일</h1>
+        <p class="date" id="today-date"></p>
+      </header>
+
+      <section class="stats" aria-live="polite">
+        <div class="stat">
+          <span class="stat-label">전체</span>
+          <strong id="total-count">0</strong>
+        </div>
+        <div class="stat highlight">
+          <span class="stat-label">완료</span>
+          <strong id="done-count">0</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">남은 일</span>
+          <strong id="left-count">0</strong>
+        </div>
+      </section>
+
+      <form class="add-form" id="todo-form">
+        <label class="sr-only" for="todo-input">할 일 입력</label>
+        <input
+          id="todo-input"
+          type="text"
+          maxlength="80"
+          placeholder="오늘 할 일을 입력하세요"
+          autocomplete="off"
+        />
+        <label class="sr-only" for="priority-select">우선순위</label>
+        <select id="priority-select" name="priority">
+          <option value="high">높음</option>
+          <option value="medium" selected>보통</option>
+          <option value="low">낮음</option>
+        </select>
+        <button type="submit">추가</button>
+      </form>
+
+      <ul class="todo-list" id="todo-list"></ul>
+      <p class="empty" id="empty-state">아직 할 일이 없습니다.</p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
